@@ -46,6 +46,9 @@ object Main {
 	}
 
 	def runExercise6(): Unit  = {
-
+		println(
+      ExerciseChapter6.randomString(10, List('A', 'B','C'))
+		);
 	}
+
 }
