@@ -13,4 +13,5 @@ object ExerciseChapter6 {
     return randomize(length, "", inputSeq)
   }
 
+  def randomCurried(inputSeq: Seq[Char]) = randomString(5, inputSeq)
 }

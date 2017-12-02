@@ -46,9 +46,13 @@ object Main {
 	}
 
 	def runExercise6(): Unit  = {
-		println(
-      ExerciseChapter6.randomString(10, List('A', 'B','C'))
-		);
+    println("With tail recursion:")
+		println(ExerciseChapter6.randomString(10, List('A', 'B','C')) );
+
+    println("Same as before but now curried")
+    print(ExerciseChapter6.randomCurried(List('A', 'B', 'C','D', 'E', 'G', 'H', 'I')))
+
+
 	}
 
 }
