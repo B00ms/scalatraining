@@ -1,3 +1,6 @@
+import javax.print.DocFlavor.BYTE_ARRAY
+
+import Chapter8.{Circle, GeometricObject, Rectangle, Triangle}
 import ExerciseChapter5._
 
 import scala.util.{Success, Try}
@@ -8,7 +11,8 @@ object Main {
 //		runExercise4()
 //		runExercise5()
 //		runExercise6()
-    runExercise7()
+//    runExercise7()
+    runExercise8()
 	}
 
 	def runExercise4(): Unit =	{
@@ -74,6 +78,15 @@ object Main {
   }
 
   def runExercise8(): Unit = {
+		val myList: List[GeometricObject] = {
+			new Circle(5) :: new Circle(10) :: new Circle(15) ::
+			new Rectangle(5, 7) :: new Rectangle(10, 14) :: new Rectangle(15, 21) ::
+			new Triangle(5, 10) :: new Triangle(10, 15) :: new Triangle(15, 20):: Nil}
 
+    println("Area of the geometric objects: ")
+    myList.foreach(x => println(x.area))
+    val areaSum = myList.foldLeft(0.0)(_ + _.area)
+    println("Total area: " + areaSum)
   }
+
 }
