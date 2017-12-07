@@ -1,11 +1,14 @@
 import ExerciseChapter5._
 
+import scala.util.{Success, Try}
+
 object Main {
 
 	def main(args: Array[String]): Unit = {
 //		runExercise4()
 //		runExercise5()
-		runExercise6()
+//		runExercise6()
+    runExercise7()
 	}
 
 	def runExercise4(): Unit =	{
@@ -51,8 +54,26 @@ object Main {
 
     println("Same as before but now curried")
     print(ExerciseChapter6.randomCurried(List('A', 'B', 'C','D', 'E', 'G', 'H', 'I')))
-
-
 	}
 
+  def runExercise7(): Unit = {
+    val inputList = List("1", "2", "x", "three", "3")
+
+    print("Input sequence of Strings: ")
+    inputList.foreach(x => println(isNumericString(x)))
+
+    val output: Int = inputList.foldLeft(0) {
+      (_ + isNumericString(_).getOrElse(0))
+    }
+    print(output)
+  }
+
+  def isNumericString(input: String): Try[Int] = {
+    Try{Integer.valueOf(input)}
+
+  }
+
+  def runExercise8(): Unit = {
+
+  }
 }
