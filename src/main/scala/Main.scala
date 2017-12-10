@@ -1,9 +1,8 @@
-import javax.print.DocFlavor.BYTE_ARRAY
-
 import Chapter8.{Circle, GeometricObject, Rectangle, Triangle}
+import Chapter9.{WithEngine, WithSteer, WithWheels}
 import ExerciseChapter5._
 
-import scala.util.{Success, Try}
+import scala.util.Try
 
 object Main {
 
@@ -12,7 +11,8 @@ object Main {
 //		runExercise5()
 //		runExercise6()
 //    runExercise7()
-    runExercise8()
+//    runExercise8()
+		runExercise9()
 	}
 
 	def runExercise4(): Unit =	{
@@ -89,4 +89,13 @@ object Main {
     println("Total area: " + areaSum)
   }
 
+	def runExercise9(): Unit = {
+		val myCar = new Object with WithWheels with WithSteer with WithEngine;
+		myCar.turnEngineOn()
+		myCar.toggleBreaks()
+		myCar.turnLeft()
+		myCar.turnRight()
+		myCar.toggleBreaks()
+		myCar.turnEngineOff()
+	}
 }
